@@ -1,17 +1,19 @@
+// 1) Import the React and ReactDOM libraries
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import ApprovalCard from './approvalCard';
+import CommnetDetail from './CommentDetail';
+import './style/App.css';
+const App=()=>{
+return (
+<div className='ui container comments' >
+    <ApprovalCard><CommnetDetail author='Wajid'/></ApprovalCard>
+    <ApprovalCard><CommnetDetail author='Ali'/></ApprovalCard>
+    <ApprovalCard><CommnetDetail author='Ahmed'/></ApprovalCard>
+    <ApprovalCard><CommnetDetail author='Haneef'/></ApprovalCard>
+</div>
 );
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.createRoot(document.querySelector('#root')).render(<App/>);
+
