@@ -26,9 +26,9 @@ class App extends React.Component{
         err=>{this.setState({errorMsg:err.message})}
     );
     }
-    componentDidUpdate(msg){
-        console.log(msg);
-    }
+    // componentDidUpdate(msg){
+    //     console.log(msg);
+    // }
 
     render(){
         if (this.state.lat && !this.state.errorMsg) {
@@ -36,9 +36,9 @@ class App extends React.Component{
             return <SeasonDisplay lat={this.state.lat}/>
         }
         if ( this.state.errorMsg && !this.state.lat) {
-            return <div>Error: {this.state.errorMsg}</div>
+            return <Spinner message={this.state.errorMsg}/>
         }
-         return <Spinner/>
+         return <Spinner message="Waiting for location..."/>
         // return (<div>Latitude: {this.state.lat}
         // <br/>
         // Error: {this.state.errorMsg}
