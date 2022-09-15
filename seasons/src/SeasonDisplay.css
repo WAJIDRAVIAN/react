@@ -31,3 +31,8 @@ background-color: aliceblue;
 .summer{
 background-color: orange;
 }
+
+.border-red{
+    border-radius: 10px;
+    border-color: red;
+}

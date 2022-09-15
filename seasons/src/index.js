@@ -1,4 +1,5 @@
 import React from 'react';
+import './SeasonDisplay.css'
 import ReactDOM from 'react-dom/client';
 import SeasonDisplay from './SeasonDisplay';
 import Spinner from './Spinner';
@@ -44,7 +45,7 @@ class App extends React.Component{
 
     render(){
         return (
-            <div className='border red'>{this.renderContent()}</div>
+            <div className='border-red'>{this.renderContent()}</div>
             
             );
     }
