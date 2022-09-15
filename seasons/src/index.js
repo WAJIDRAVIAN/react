@@ -30,7 +30,8 @@ class App extends React.Component{
     //     console.log(msg);
     // }
 
-    render(){
+    renderContent(){
+
         if (this.state.lat && !this.state.errorMsg) {
             // return <div>Latitude: {this.state.lat}</div>
             return <SeasonDisplay lat={this.state.lat}/>
@@ -39,11 +40,13 @@ class App extends React.Component{
             return <Spinner message={this.state.errorMsg}/>
         }
          return <Spinner message="Waiting for location..."/>
-        // return (<div>Latitude: {this.state.lat}
-        // <br/>
-        // Error: {this.state.errorMsg}
-        // </div>
-        // );
+    }
+
+    render(){
+        return (
+            <div className='border red'>{this.renderContent()}</div>
+            
+            );
     }
 
 }
