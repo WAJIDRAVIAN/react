@@ -3,6 +3,7 @@ import axios from 'axios';
 import SearchBar from './SearchBar';
 
 class App extends React.Component{
+    state = {images: []};
     async onSearchSubmit(term){
         // console.log(term);
         const response = await axios.get('https://api.unsplash.com/search/photos',{
@@ -12,12 +13,14 @@ class App extends React.Component{
             }
         });
 
-        console.log(response.data.results);
+        // console.log(response.data.results);
+        this.setState({images: response.data.results})
     }
     render (){
         return (
         <div className="ui container">
             <SearchBar onSubmit={this.onSearchSubmit}/>
+            Found:  {this.state.images.length} images
         </div>
         );
     }
