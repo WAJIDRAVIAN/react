@@ -1,9 +1,26 @@
-import { title } from "faker/lib/locales/az";
 import React from "react";
 
+
+
 const Accordion=({items})=>{
+    const renderedItems = items.map((item,  index)=>{
+        return(
+            <React.Fragment key={item.title}>
+                    <div className="title active" onClick={()=>console.log('Item clicked:',index)}>
+                        <i className="dropdown icon"></i>
+                        {item.title}
+                    </div>
+                    <div className="content active">
+                        <p> {item.content} </p>
+                    </div>
+                
+            </React.Fragment>
+        );
+    });
     return (
-        <h1>items:{items.length}</h1>
+        <div className="ui styled accordion">
+            {renderedItems}
+        </div>
     );
 }
 

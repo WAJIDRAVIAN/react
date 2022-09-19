@@ -19,10 +19,19 @@ const items =[
      content:'it is a js frontend framework'
     }
 ];
-export default()=>{
-return (
-    <div>
-        <Accordion  items={items}/>
-    </div>
-);
-}
+const render=()=>{
+    return (
+        <div>
+            <Accordion  items={items}/>
+        </div>
+    );
+    }
+
+export default render;
+// export default()=>{
+// return (
+//     <div>
+//         <Accordion  items={items}/>
+//     </div>
+// );
+// }
