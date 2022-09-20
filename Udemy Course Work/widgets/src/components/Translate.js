@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Dropdown from "./Dropdown";
 import Convert from "./Convert";
-//Google API
+//Google API Key
 // AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM
 
 const options =[
@@ -15,7 +15,7 @@ const options =[
     },
     {
         label:'English',
-        value:'eng'        
+        value:'en'        
     },
     {
         label:'Arabic',
