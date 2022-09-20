@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Accordion from "./components/Accordion";
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
+import Translate from './components/Translate';
 const items =[
     {title:'react-1',
      content:'it is a js frontend framework'
@@ -45,17 +46,13 @@ const options =[
 
 const FunRender=()=>{
     const [selected, setSelected] = useState(options[0]);
-    const [showDropdown, setShowDropdown] = useState(true);
     return (
         <div>
-            <button onClick={()=>setShowDropdown(!showDropdown)} className={`ui toggle button ${showDropdown?'active':''}`}>{`${showDropdown?'Hide Menu':'Show Menu'}`}</button>
-            {   showDropdown?
-                <Dropdown
+                <Translate
                 selected={selected}
                 onSelectedChange={setSelected} 
                 options={options}
-            /> : null
-         }
+            /> 
         </div>
     );
     }
