@@ -1,3 +1,5 @@
+import {combineReducers} from 'redux';
+
 // Songs Reducer
 const SongsReducer =()=>{
 
@@ -7,7 +9,7 @@ const SongsReducer =()=>{
         {title:'Jutt Charhya Kechehri', duration:'3:20'}
     ];
 };
-
+//Selected Song Reducer
 const SelectedSongReducer = (selectedSong=null, action) =>{
     if (action.type==='SONG_SELECTED') {
         return action.payload;
@@ -15,3 +17,8 @@ const SelectedSongReducer = (selectedSong=null, action) =>{
 
     return selectedSong;
 };
+
+export default combineReducers({
+    songs:SongsReducer,
+    selectedSong:SelectedSongReducer
+});
