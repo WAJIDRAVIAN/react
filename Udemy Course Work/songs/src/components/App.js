@@ -1,10 +1,11 @@
 import React from "react";
-import { SelectSong } from "./actions";
+//Imports from the directory
+import SongList from "./SongList";
 const App =()=>{
 
     return(
         <div>
-            App
+            <SongList/>
         </div>
     );
 }
