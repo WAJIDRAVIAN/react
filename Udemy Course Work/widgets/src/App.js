@@ -4,6 +4,8 @@ import Search from './components/Search';
 import Dropdown from './components/Dropdown';
 import Translate from './components/Translate';
 import Route from './components/Route';
+import Header from './components/Header';
+
 
 const items =[
     {title:'react-1',
@@ -48,47 +50,11 @@ const options =[
 
 
 
-const ShowAccordion=()=>{
-    if (window.location.pathname==='/') {
-        return <Accordion items={items}/>;
-    }
-}
-
-const ShowList=()=>{
-    if (window.location.pathname==='/list') {
-        return <Search />
-    }
-}
-
-const ShowDropdown=()=>{
-    const [selected, setSelected] = useState(options[0]);
-    if (window.location.pathname==='/dropdown') {
-        return (<Dropdown label={label} options={options} 
-        selected={selected} onSelectedChange={setSelected}/>);
-    }
-}
-const ShowTranslate=()=>{
-    if (window.location.pathname==='/translate') {
-        return <Translate />
-    }
-}
-
-
-// const ShowComponent = (route, component) =>{
-//     return window.location.pathname === route ? component : null;
-// }
-
-
-
-
-
-
-
-
 const FunRender=()=>{
     const [selected, setSelected] = useState(options[0]);
     return (
         <div>
+            <Header/>
             <Route path='/'>
                 <Accordion items={items}/>
             </Route>
