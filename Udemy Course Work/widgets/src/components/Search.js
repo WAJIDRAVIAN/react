@@ -4,8 +4,6 @@ const Search = () => {
     const [term, setTerm] =useState('programming');
     const [results, setResults] = useState([]);
 
-    console.log(results);
-    // Object.keys(results).map((key) => results[key].map())
     useEffect(()=>{
         const search = async()=>{
             const {data} = await axios.get('https://en.wikipedia.org/w/api.php', {
