@@ -3,6 +3,8 @@ import Accordion from "./components/Accordion";
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
 import Translate from './components/Translate';
+import Route from './components/Route';
+
 const items =[
     {title:'react-1',
      content:'it is a js frontend framework'
@@ -70,19 +72,39 @@ const ShowTranslate=()=>{
         return <Translate />
     }
 }
+
+
+// const ShowComponent = (route, component) =>{
+//     return window.location.pathname === route ? component : null;
+// }
+
+
+
+
+
+
+
+
 const FunRender=()=>{
-    
+    const [selected, setSelected] = useState(options[0]);
     return (
         <div>
-                { ShowAccordion()
-                /* <Translate
-                selected={selected}
-                onSelectedChange={setSelected} 
-                options={options} 
-                /> */}
-                {ShowList()}
-                {ShowDropdown()}
-                {ShowTranslate()}
+            <Route path='/'>
+                <Accordion items={items}/>
+            </Route>
+
+            <Route path='/list'>
+            <Search />
+            </Route>
+
+            <Route path='/dropdown'>
+            <Dropdown label={label} options={options} 
+                    selected={selected} onSelectedChange={setSelected}/>
+            </Route>
+
+            <Route path='/translate'>
+            <Translate />
+            </Route>
         </div>
     );
 }
