@@ -20,7 +20,7 @@ const items =[
      content:'it is a js frontend framework'
     }
 ];
-
+const label = 'Please select a color';
 const options =[
 {
     label:'Red color',
@@ -44,19 +44,48 @@ const options =[
 }
 ];
 
-const FunRender=()=>{
+
+
+const ShowAccordion=()=>{
+    if (window.location.pathname==='/') {
+        return <Accordion items={items}/>;
+    }
+}
+
+const ShowList=()=>{
+    if (window.location.pathname==='/list') {
+        return <Search />
+    }
+}
+
+const ShowDropdown=()=>{
     const [selected, setSelected] = useState(options[0]);
+    if (window.location.pathname==='/dropdown') {
+        return (<Dropdown label={label} options={options} 
+        selected={selected} onSelectedChange={setSelected}/>);
+    }
+}
+const ShowTranslate=()=>{
+    if (window.location.pathname==='/translate') {
+        return <Translate />
+    }
+}
+const FunRender=()=>{
+    
     return (
         <div>
-                <Translate
+                { ShowAccordion()
+                /* <Translate
                 selected={selected}
                 onSelectedChange={setSelected} 
-                options={options}
-            /> 
+                options={options} 
+                /> */}
+                {ShowList()}
+                {ShowDropdown()}
+                {ShowTranslate()}
         </div>
     );
-    }
-
+}
 export default FunRender;
 // export default()=>{
 // return (
