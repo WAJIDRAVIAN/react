@@ -3,11 +3,18 @@ import jsonPlaceholder from "../apis/jsonPlaceholder";
 
 export const FetchPosts = () => {
 
-    return function(dispatch,  getState) {
-        const jsonResponse = jsonPlaceholder.get('posts');
-        return{
-            type:'FETCH_POSTS',
+    return async (dispatch)=> {
+        const jsonResponse = await jsonPlaceholder.get('posts');
+        
+        dispatch({
+            type:'FETCH_POST',
             payload: jsonResponse
-        };
+        });
     }
 };
+
+// export const  SelectPost=()=>{
+//     return{
+//         type:'SELECT_POST'
+//     }
+// };
