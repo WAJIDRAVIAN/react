@@ -7,8 +7,8 @@ export const FetchPosts = () => {
         const jsonResponse = await jsonPlaceholder.get('posts');
         
         dispatch({
-            type:'FETCH_POST',
-            payload: jsonResponse
+            type:'FETCH_POSTS',
+            payload: jsonResponse.data
         });
     }
 };

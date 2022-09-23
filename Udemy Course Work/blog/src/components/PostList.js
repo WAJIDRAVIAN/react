@@ -7,6 +7,7 @@ class PostList extends React.Component{
         this.props.FetchPosts();
     }
     render(){
+        console.log(this.props.posts)
         return(
             <div>
                 <h2>PostList</h2>
@@ -15,4 +16,8 @@ class PostList extends React.Component{
     };
 }
 
-export default connect(null, {FetchPosts})(PostList);
+const mapStateToProps = (state) =>{
+    return {posts: state.posts}
+}
+
+export default connect(mapStateToProps, {FetchPosts})(PostList);
