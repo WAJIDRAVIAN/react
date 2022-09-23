@@ -5,6 +5,7 @@ const PageOne = () =>{
     return (
         <div>
             <h1>PageOne</h1>
+            <a href='/pagetwo'>Navigate to Page Two</a>
         </div>
     );
 }
@@ -13,6 +14,7 @@ const PageTwo = () =>{
     return (
         <div>
             <h1>PageTwo</h1>
+            <a href='/'>Navigate to Page One</a>
         </div>
     );
 }
