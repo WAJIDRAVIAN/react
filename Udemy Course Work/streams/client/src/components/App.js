@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Link } from 'react-router-dom';
+import { MemoryRouter, Route, Link } from 'react-router-dom';
 
 const PageOne = () =>{
     return (
@@ -24,12 +24,12 @@ const App = () =>{
     return (
         <div>
             <h1>App</h1>
-            <HashRouter>
+            <MemoryRouter>
                 <div>
                     <Route path="/" exact component={PageOne}/>
                     <Route path="/pagetwo" component={PageTwo}/>
                 </div>
-            </HashRouter>
+            </MemoryRouter>
         </div>
     );
 }
